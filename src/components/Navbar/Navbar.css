@@ -15,6 +15,7 @@
   .navbar-logo {
     display: flex;
     align-items: center;
+    margin: 10px;
   }
   
   .logo {
@@ -33,14 +34,22 @@
   }
   
   .navbar-item {
-    margin: 0 15px;
+    padding: 20px 35px;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .navbar-item:hover {
-    text-decoration: underline;
+    color: #61BC21;
+    transition: 0.5s;
+  }  
+  .mobile-menu-list .navbar-item:hover {
+    color: #61BC21;
+    transition: 0.5s;
   }
   
   /* Mail Icon (Always Visible) */
@@ -130,7 +139,7 @@
     right: -100%;
     height: 100%;
     width: 400px;
-    background: white;
+    background: #000000;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
     z-index: 2000;
@@ -147,7 +156,8 @@
   .popup-content h2 {
     margin: 0 0 20px 0;
     font-size: 24px;
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
     text-align: center;
   }
   
@@ -157,8 +167,9 @@
   
   .popup-content label {
     display: block;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
-    color: #666;
+    color: #dadada;
     margin-bottom: 5px;
   }
   
@@ -166,8 +177,9 @@
   .popup-content textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #61BC21;
     border-radius: 4px;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
   }
   
@@ -179,8 +191,9 @@
   .popup-content .submit-btn {
     width: 100%;
     padding: 10px;
+    font-family: "Poppins", sans-serif;
     border: none;
-    background-color: #333;
+    background-color: #61BC21;
     color: white;
     border-radius: 4px;
     font-size: 16px;
@@ -199,11 +212,11 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
-    color: #333;
+    color: #ffffff;
   }
   /* Responsive Design */
   @media (max-width: 768px) {
-    .desktop-menu {
+    .navbar-menu.desktop-menu {
       display: none;
     }
   
@@ -226,3 +239,19 @@
     }
   }
   
+  /* Active Tab Styling */
+.navbar-item.active {
+  color: #61BC21; /* Highlight active tab */
+  font-weight: bold; /* Optional for emphasis */
+}
+
+/* Inactive Tab Styling */
+.navbar-item {
+  color: white;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-item:hover {
+  color: #61BC21;
+}

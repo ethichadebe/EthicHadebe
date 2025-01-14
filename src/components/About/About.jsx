@@ -11,13 +11,25 @@ const About = () => {
   return (
     <div className='about'>
       <div className="about-left">
-        <h2>Ethic Hadebe: <span className='highlight'>Software developer</span>, <span className='highlight'>tech innovator</span>, and architect of transformative digital solutions. His work reflects a passion for empowering users and businesses through intuitive web and mobile experiences, all designed to solve real-world challenges</h2>
-        <Link to="https://www.penuelism.com/" target='_blank' className='skill'><img src={java} alt="" className='skill-icon'/>Java</Link>
-        <Link to="https://www.penuelism.com/" target='_blank' className='skill'><img src={node} alt="" className='skill-icon'/>Node.js</Link>
-        <Link to="https://www.penuelism.com/" target='_blank' className='skill'><img src={react} alt="" className='skill-icon'/> React</Link>
-        <Link to="https://www.penuelism.com/" target='_blank' className='skill'><img src={mysql} alt="" className='skill-icon'/> MySql</Link>
-     </div>
-     <div className="about-right">
+        <h2>
+          Ethic Hadebe: <span className='highlight'>Software developer</span>, <span className='highlight'>tech innovator</span>, and architect of transformative digital solutions. His work reflects a passion for empowering users and businesses through intuitive web and mobile experiences, all designed to solve real-world challenges
+        </h2>
+        <div className="skills-container">
+          <div to="#" target='_blank' className='skill'>
+            <img src={java} alt="" className='skill-icon' />Java
+          </div>
+          <div to="#" target='_blank' className='skill'>
+            <img src={node} alt="" className='skill-icon' />Node.js
+          </div>
+          <div to="#" target='_blank' className='skill'>
+            <img src={react} alt="" className='skill-icon' />React
+          </div>
+          <div to="#" target='_blank' className='skill'>
+            <img src={mysql} alt="" className='skill-icon' />MySql
+          </div>
+        </div>
+      </div>
+      <div className="about-right">
         <img src={about_img} className='about-img' alt="about image" />
       </div>
     </div>

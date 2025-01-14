@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from '../../assets/Logo.png'
 import menu from '../../assets/menu.png'
 import mail from '../../assets/Mail.png'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // Toggle for burger menu
@@ -17,33 +17,33 @@ const Navbar = () => {
     setPopupOpen(!popupOpen);
   };
 
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    setMenuOpen(false); // Close the burger menu after selection
-  };
-
   return (
   <>
 <nav className="navbar">
   {/* Logo */}
   <div className="navbar-logo">
-    <img src={logo} alt="Logo" className="logo" />
+  <Link to='about' smooth={true} offset={-1000} duration={500}>
+  <img src={logo} alt="Logo" className="logo" onClick={() => setMenuOpen(false)}/>
+</Link>
   </div>
 
   {/* Desktop Menu */}
   <ul className="navbar-menu desktop-menu">
-    <li className="navbar-item" onClick={() => handleScroll("home")}>
+  <Link to='about' smooth={true} offset={-1000} duration={500}>
+    <li className="navbar-item" onClick={() => setMenuOpen(false)}>
       Home
     </li>
-    <li className="navbar-item" onClick={() => handleScroll("about")}>
+    </Link>
+    <Link to='about' smooth={true} offset={0} duration={500}>
+    <li className="navbar-item" onClick={() => setMenuOpen(false)}>
       About
     </li>
-    <li className="navbar-item" onClick={() => handleScroll("projects")}>
+    </Link>
+    <Link to='about' smooth={true} offset={700} duration={500}>
+    <li className="navbar-item" onClick={() => setMenuOpen(false)}>
       Projects
     </li>
+    </Link>
   </ul>
 
   {/* Mobile Menu Options */}
@@ -63,15 +63,21 @@ const Navbar = () => {
   {/* Mobile Dropdown Menu */}
   <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
     <ul className="mobile-menu-list">
-      <li className="navbar-item" onClick={() => handleScroll("home")}>
+    <Link to='about' smooth={true} offset={-1000} duration={500}>
+      <li className="navbar-item" onClick={() => setMenuOpen(false)}>
         Home
       </li>
-      <li className="navbar-item" onClick={() => handleScroll("about")}>
+    </Link>
+    <Link to='about' smooth={true} offset={-100} duration={500}>
+      <li className="navbar-item" onClick={() => setMenuOpen(false)}>
         About
       </li>
-      <li className="navbar-item" onClick={() => handleScroll("projects")}>
+    </Link>
+    <Link to='about' smooth={true} offset={1200} duration={500}>
+      <li className="navbar-item" onClick={() => setMenuOpen(false)}>
         Projects
       </li>
+    </Link>
     </ul>
   </div>
 </nav>
@@ -81,7 +87,7 @@ const Navbar = () => {
           <button className="close-btn" onClick={togglePopup}>
             ×
           </button>
-          <h2>Contact Us</h2>
+          <h2>Get in touch</h2>
           <form>
             <div className="form-group">
               <label>Name</label>
