@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
 import './Projects.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLink } from '@fortawesome/free-solid-svg-icons'
+
+import node from '../../assets/skill_icons/node.png'
+import github from '../../assets/skill_icons/github.png'
+
 import tlm from "../../assets/projects/tlm.png"
 import tlm_vid from "../../assets/projects/tlm.mp4"
 import bdme from "../../assets/projects/bdme.png"
@@ -9,8 +15,6 @@ import eph_vid from "../../assets/projects/eph.mp4"
 import { Link } from 'react-router-dom'
 
 const Projects = () => {
-  const [isTlmHovered, setTlmIsHovered] = useState(false);
-  const [isBdmeHovered, setBdmeIsHovered] = useState(false);
   
   return (
     <div className="grid-wrapper">
@@ -18,8 +22,33 @@ const Projects = () => {
         <img src={tlm} alt="Default Background" className="slide-image"/>
         <video src={tlm_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
-          <h3></h3>
-          <p></p>
+          <h3>The lazy Makoti</h3>
+          <p>Using React to create a reimagined modern design, for a website that better represents the elegancy of the brand.</p>
+
+          <div className="skills-container">
+            <Link to="https://tlm.onrender.com/" target='_blank' className="skill">
+              <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
+            </Link>
+
+            <Link to="https://github.com/ethichadebe/tlm" target='_blank' className="skill-git">
+              <img src={github} alt="Node.js Icon" className="skill-icon" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid-slide">
+        <img src={eph} alt="Default Background" className="slide-image"/>
+        <video src={eph_vid} autoPlay loop muted className="slide-video"/>
+        <div className="grid-slide-content">
+          <h3>EP Hotspot</h3>
+          <p>An android application designed using Figma and developed in Java and Kotlin for a robust, modern and interactive user experience.</p>
+
+          <div className="skills-container">
+            <Link to="https://play.google.com/store/apps/details?id=com.eph.ephotspot&hl=en" target='_blank' className="skill">
+              <FontAwesomeIcon icon={faLink} className='skill-icon'/> Go to PlayStore
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -27,20 +56,18 @@ const Projects = () => {
         <img src={bdme} alt="Default Background" className="slide-image"/>
         <video src={bdme_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
-          <h3></h3>
-          <p></p>
+          <h3>BDM Energy</h3>
+          <p>Using figma to design and react to develop for a modern and responsive interface</p>
+
+          <div className="skills-container">
+            <Link to="https://bdmenergy.co.za/" target='_blank' className="skill">
+            <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="grid-slide">
-        <img src={eph} alt="Default Background" className="slide-image"/>
-        <video src={eph_vid} autoPlay loop muted className="slide-video"/>
-        <div className="grid-slide-content">
-          <h3></h3>
-          <p></p>
-        </div>
-      </div>
-  </div>
-)
+    </div>
+  )
 }
 
 export default Projects
