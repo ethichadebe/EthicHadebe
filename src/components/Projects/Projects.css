@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
   gap: 0; /* No spacing between grid items */
-  padding: 20px; /* Padding around the grid container */
 }
 
 /* Slide styling */
@@ -102,7 +101,7 @@
   padding: 10px 20px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   border: 0;
   outline: 0;

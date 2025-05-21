@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import about_img from '../../assets/about.png'
+import about_img from '../../assets/about.webp'
 import react from '../../assets/skill_icons/react.png'
 import figma from '../../assets/skill_icons/figma.png'
 import node from '../../assets/skill_icons/node.png'
@@ -42,7 +42,7 @@ const About = () => {
         </div>
       </div>
       <div className="about-right">
-        {/*<img src={about_img} className='about-img' alt="about image" />*/}
+        <img src={about_img} className='about-img' alt="about image" />
       </div>
     </div>
   )

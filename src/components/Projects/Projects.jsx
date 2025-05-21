@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
-
-import node from '../../assets/skill_icons/node.png'
-import github from '../../assets/skill_icons/github.png'
-
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import tlm from "../../assets/projects/tlm.png"
 import tlm_vid from "../../assets/projects/tlm.mp4"
 import bdme from "../../assets/projects/bdme.png"
@@ -26,12 +23,12 @@ const Projects = () => {
           <p>Using React to create a reimagined modern design, for a website that better represents the elegancy of the brand.</p>
 
           <div className="skills-container">
-            <Link to="https://tlm.onrender.com/" target='_blank' className="skill">
+            <Link to="https://thelazymakoti.ethichadebe.me/" target='_blank' className="skill">
               <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
             </Link>
 
             <Link to="https://github.com/ethichadebe/tlm" target='_blank' className="skill-git">
-              <img src={github} alt="Node.js Icon" className="skill-icon" />
+              <FontAwesomeIcon icon={faGithub} className='skill-icon'/>
             </Link>
           </div>
         </div>
@@ -66,7 +63,22 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="grid-slide">
+        <img src={bdme} alt="Default Background" className="slide-image"/>
+        <video src={bdme_vid} autoPlay loop muted className="slide-video"/>
+        <div className="grid-slide-content">
+          <h3>Penuel The Black Pen</h3>
+          <p>Using figma to design and react to develop for a modern and responsive interface</p>
+
+          <div className="skills-container">
+            <Link to="https://penuel.ethichadebe.me/" target='_blank' className="skill">
+            <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
+            </Link>
+          </div>
+        </div>
+      </div>
+      </div>
   )
 }
 
