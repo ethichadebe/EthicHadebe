@@ -2,7 +2,7 @@ import React from 'react'
 import './About.css'
 import about_img from '../../assets/about.webp'
 import react from '../../assets/skill_icons/react.png'
-import figma from '../../assets/skill_icons/figma.png'
+import springboot from '../../assets/skill_icons/spring-boot-logo.png'
 import node from '../../assets/skill_icons/node.png'
 import java from '../../assets/skill_icons/java.png'
 import kotlin from '../../assets/skill_icons/Kotlin_Icon.png'
@@ -28,7 +28,7 @@ const About = () => {
             <img src={node} alt="" className='skill-icon' />Node.js
           </div>
           <div to="#" target='_blank' className='skill'>
-            <img src={figma} alt="" className='skill-icon' />Figma
+            <img src={springboot} alt="" className='skill-icon' />Spring Boot
           </div>
           <div to="#" target='_blank' className='skill'>
             <img src={kotlin} alt="" className='skill-icon' />Kotlin

@@ -9,6 +9,8 @@ import bdme from "../../assets/projects/bdme.png"
 import bdme_vid from "../../assets/projects/bdme.mp4"
 import eph from "../../assets/projects/eph.png"
 import eph_vid from "../../assets/projects/eph.mp4"
+import penuel from "../../assets/projects/penuel.png"
+import penuel_vid from "../../assets/projects/penuel.mp4"
 import { Link } from 'react-router-dom'
 
 const Projects = () => {
@@ -64,9 +66,9 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="grid-slide">
-        <img src={bdme} alt="Default Background" className="slide-image"/>
-        <video src={bdme_vid} autoPlay loop muted className="slide-video"/>
+      {/* <div className="grid-slide">
+        <img src={penuel} alt="Default Background" className="slide-image"/>
+        <video src={penuel_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
           <h3>Penuel The Black Pen</h3>
           <p>Using figma to design and react to develop for a modern and responsive interface</p>
@@ -77,7 +79,7 @@ const Projects = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div>*/}
       </div>
   )
 }
