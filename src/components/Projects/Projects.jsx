@@ -8,57 +8,56 @@ import bdme from "../../assets/projects/bdme.png"
 import bdme_vid from "../../assets/projects/bdme.mp4"
 import eph from "../../assets/projects/eph.png"
 import eph_vid from "../../assets/projects/eph.mp4"
-import { Link } from 'react-router-dom'
 
 const Projects = () => {
   
   return (
     <div id="projects" className="grid-wrapper">
       <div className="grid-slide">
-        <img src={tlm} alt="Default Background" className="slide-image"/>
+        <img src={tlm} alt="" className="slide-image"/>
         <video src={tlm_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
           <h3>The lazy Makoti</h3>
           <p>Using React to create a reimagined modern design, for a website that better represents the elegancy of the brand.</p>
 
           <div className="skills-container">
-            <Link to="https://thelazymakoti.ethichadebe.me/" target='_blank' className="skill">
+            <a href="https://thelazymakoti.ethichadebe.me/" target="_blank" rel="noreferrer" className="skill">
               <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
-            </Link>
+            </a>
 
-            <Link to="https://github.com/ethichadebe/tlm" target='_blank' className="skill-git">
+            <a href="https://github.com/ethichadebe/tlm" target="_blank" rel="noreferrer" className="skill skill-git" aria-label="Source on GitHub">
               <FontAwesomeIcon icon={faGithub} className='skill-icon'/>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
 
       <div className="grid-slide">
-        <img src={eph} alt="Default Background" className="slide-image"/>
+        <img src={eph} alt="" className="slide-image"/>
         <video src={eph_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
           <h3>EP Hotspot</h3>
           <p>An android application designed using Figma and developed in Java and Kotlin for a robust, modern and interactive user experience.</p>
 
           <div className="skills-container">
-            <Link to="https://play.google.com/store/apps/details?id=com.eph.ephotspot&hl=en" target='_blank' className="skill">
+            <a href="https://play.google.com/store/apps/details?id=com.eph.ephotspot&hl=en" target="_blank" rel="noreferrer" className="skill">
               <FontAwesomeIcon icon={faLink} className='skill-icon'/> Go to PlayStore
-            </Link>
+            </a>
           </div>
         </div>
       </div>
 
       <div className="grid-slide">
-        <img src={bdme} alt="Default Background" className="slide-image"/>
+        <img src={bdme} alt="" className="slide-image"/>
         <video src={bdme_vid} autoPlay loop muted className="slide-video"/>
         <div className="grid-slide-content">
           <h3>BDM Energy</h3>
           <p>Using figma to design and react to develop for a modern and responsive interface</p>
 
           <div className="skills-container">
-            <Link to="https://bdmenergy.co.za/" target='_blank' className="skill">
+            <a href="https://bdmenergy.co.za/" target="_blank" rel="noreferrer" className="skill">
             <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
-            </Link>
+            </a>
           </div>
         </div>
       </div>

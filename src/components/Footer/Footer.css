@@ -1,14 +1,6 @@
-.footer{
-    text-align: center;
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 70px 0 30px;
-
-}
-
-.footer p{
-    color: white;
-    margin-top: 5px;
-    text-transform: none;
+.footer {
+  text-align: center;
+  color: var(--color-text);
+  font-weight: 600;
+  margin: 20px 0 30px;
 }

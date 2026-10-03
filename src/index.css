@@ -1,5 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Moul&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Only the weights the site uses: Open Sans for body text, Poppins for headings,
+   buttons and labels. */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Design tokens: every colour, font and shared size comes from here.
+
+   Breakpoints (media queries cannot read custom properties, so they are
+   written out where used, always one of these):
+     600px  phones: single column, smaller type
+     900px  tablets: burger menu, two-column project grid
+     1200px small laptops: narrower page margins */
 :root{
+    --color-bg: #000000;
+    --color-text: #ffffff;
+    --color-text-muted: #dadada;
+    --color-accent: #61BC21;
+    --color-accent-hover: #4e9a1a;
+    --color-chip: #ffffff;
+    --color-on-chip: #000000;
+    --color-overlay: rgba(0, 0, 0, 0.6);
+
+    --font-body: "Open Sans", sans-serif;
+    --font-heading: "Poppins", sans-serif;
+
+    --radius: 10px;
+    --transition: 0.3s ease;
+
     /* Height of the fixed navbar: the 75px mail icon plus its 10px margins. */
     --nav-height: 95px;
 }
@@ -8,12 +33,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-    
+    font-family: var(--font-body);
 }
 
-body{   
-    background: #000;
+body{
+    background: var(--color-bg);
+    color: var(--color-text);
 }
 
 /* Sections scrolled to from the menu stop below the fixed navbar. */
@@ -33,28 +58,9 @@ a{
     padding-right: 10%;
 }
 
-.btn{
-    background: white;
-    color: black;
-    width: 70%;
-    margin-top: 20px;
-    padding: 14px 25px;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 0;
-    outline: 0;
-    text-align: center;
-}
-
-.btn:hover{
-    background: #730206;
-    color: white;
-}
-/*-------------- Media query --------------*/
 @media (max-width: 1200px) {
     .container{
         padding-left: 5%;
         padding-right: 5%;
-    }    
+    }
 }

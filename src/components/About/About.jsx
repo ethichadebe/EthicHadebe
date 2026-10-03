@@ -16,31 +16,31 @@ const About = () => {
           Ethic Hadebe: <span className='highlight'>Software developer</span>, <span className='highlight'>tech innovator</span>, and architect of transformative digital solutions. His work reflects a passion for empowering users and businesses through intuitive web and mobile experiences, all designed to solve real-world challenges
         </h2>
         <div className="skills-container">
-        <div to="#" target='_blank' className='skill'>
+        <div className='skill'>
             <img src={androidStudio} alt="" className='skill-icon' />Android Studio
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={java} alt="" className='skill-icon' />Java
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={node} alt="" className='skill-icon' />Node.js
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={springboot} alt="" className='skill-icon' />Spring Boot
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={kotlin} alt="" className='skill-icon' />Kotlin
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={react} alt="" className='skill-icon' />React
           </div>
-          <div to="#" target='_blank' className='skill'>
+          <div className='skill'>
             <img src={mysql} alt="" className='skill-icon' />MySql
           </div>
         </div>
       </div>
       <div className="about-right">
-        <img src={about_img} className='about-img' alt="about image" />
+        <img src={about_img} className='about-img' alt="Ethic Hadebe" />
       </div>
     </div>
   )

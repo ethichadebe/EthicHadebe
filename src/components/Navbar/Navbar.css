@@ -1,183 +1,142 @@
-/* General Navbar Styles */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: #00000030;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  .logo {
-    height: 50px;
-    width: auto;
-  }
-  
-  /* Desktop Menu */
-  .navbar-menu.desktop-menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex: 1;
-  }
-  
-  .navbar-item {
-    display: block;
-    padding: 20px 35px;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    font-size: 18px;
-  }
-  
-  .navbar-item:hover {
-    color: #61BC21;
-    transition: 0.5s;
-  }  
-  .mobile-menu-list .navbar-item:hover {
-    color: #61BC21;
-    transition: 0.5s;
-  }
-  
-  /* Mail Icon (Always Visible) */
-  .navbar-mail {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    padding: 0;
-  }
-  
-  .mail-icon {
-    height: 75px;
-    width: 75px;
-    margin: 10px;
-  }
-  
-  .mail-icon:hover {
-    opacity: 0.8;
-  }
-  
-  /* Mobile Menu */
-  .mobile-options {
-    display: none;
-  }
-  
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background-color: #000000;
-    transition: top 0.3s ease;
-    z-index: 900;
-  }
-  
-  .mobile-menu.active {
-    top: var(--nav-height);
-  }
-  
-  .mobile-menu-list {
-    list-style: none;
-    padding: 20px 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  .mobile-menu-list .navbar-item {
-    margin: 15px 0;
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  /* Burger Menu */
-  .burger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 20px;
-    width: 25px;
-    cursor: pointer;
-    background: none;
-    border: 0;
-    padding: 0;
-  }
-  
-  .burger-menu .line {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .burger-menu .line.open:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .burger-menu .line.open:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .burger-menu .line.open:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar-menu.desktop-menu {
-      display: none;
-    }
-  
-    .mobile-options {
-      display: flex;
-    }
-  
-    .mobile-menu {
-      display: block;
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .mobile-options {
-      display: none;
-    }
-  
-    .desktop-menu {
-      display: flex;
-    }
-  }
-  
-  /* Active Tab Styling */
-.navbar-item.active {
-  color: #61BC21; /* Highlight active tab */
-  font-weight: bold; /* Optional for emphasis */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.19);
+  color: var(--color-text);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Inactive Tab Styling */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Desktop menu */
+.navbar-menu.desktop-menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex: 1;
+}
+
 .navbar-item {
-  color: white;
-  transition: color 0.3s ease, font-weight 0.3s ease;
+  display: block;
+  padding: 20px 35px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  transition: color var(--transition);
 }
 
-/* Hover Effect */
 .navbar-item:hover {
-  color: #61BC21;
+  color: var(--color-accent);
+}
+
+/* Mail icon, always visible */
+.navbar-mail {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.mail-icon {
+  height: 75px;
+  width: 75px;
+  margin: 10px;
+  transition: opacity var(--transition);
+}
+
+.mail-icon:hover {
+  opacity: 0.8;
+}
+
+/* Burger button and the menu it drops down (small screens only) */
+.mobile-options {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg);
+  transition: top var(--transition);
+  z-index: 900;
+}
+
+.mobile-menu.active {
+  top: var(--nav-height);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.mobile-menu-list .navbar-item {
+  margin: 15px 0;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.burger-menu .line {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-text);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.burger-menu .line.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu .line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu .line.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .navbar-menu.desktop-menu {
+    display: none;
+  }
+
+  .mobile-options {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
 }
