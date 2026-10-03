@@ -23,3 +23,9 @@ The video is 1.8 MB; the existing ones are 6–26 MB.
 - The first repo link given was this one; the app lives in `ethichadebe/Brittle-AI`.
 - Headless Chromium here cannot play H.264 at all, so playback was verified by decoding the whole file with ffmpeg rather than in the browser. The existing videos fail the same way there.
 - Accucery is mobile-first (a 480px column on a laptop), so the video uses two phones, like EP Hotspot, rather than a laptop.
+
+## Follow-up: re-framed for the cards
+
+On a phone the Accucery card showed mostly empty teal and half a phone. The cards are portrait (about 390×600 on a phone, 342×600 on a laptop) and the video fills them with `object-fit: cover`, so only the middle third of the 1920px frame shows — roughly x 610–1310. The other project videos keep their logo and devices in the centre for this reason; the first Accucery cut had its taglines on the far left and the phones on the right.
+
+Re-rendered with everything inside the centre 600px: logo at the top, tagline centred beneath it, the two phones side by side in the middle. Same story and timing, same 13 s at 60 fps, now 1.6 MB. The still was tightened the same way so both phones stay inside the card's crop.
