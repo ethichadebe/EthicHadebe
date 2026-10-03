@@ -8,11 +8,32 @@ import bdme from "../../assets/projects/bdme.png"
 import bdme_vid from "../../assets/projects/bdme.mp4"
 import eph from "../../assets/projects/eph.png"
 import eph_vid from "../../assets/projects/eph.mp4"
+import accucery from "../../assets/projects/accucery.png"
+import accucery_vid from "../../assets/projects/accucery.mp4"
 
 const Projects = () => {
   
   return (
     <div id="projects" className="grid-wrapper">
+      <div className="grid-slide">
+        <img src={accucery} alt="" className="slide-image"/>
+        <video src={accucery_vid} autoPlay loop muted playsInline className="slide-video"/>
+        <div className="grid-slide-content">
+          <h3>Accucery</h3>
+          <p>A grocery list app with live prices from South African stores, built with React and Node.js to compare a whole basket between Checkers, Pick n Pay, Shoprite and more.</p>
+
+          <div className="skills-container">
+            <a href="https://accucery.ethichadebe.me/" target="_blank" rel="noreferrer" className="skill">
+              <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
+            </a>
+
+            <a href="https://github.com/ethichadebe/Brittle-AI" target="_blank" rel="noreferrer" className="skill skill-git" aria-label="Source on GitHub">
+              <FontAwesomeIcon icon={faGithub} className='skill-icon'/>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="grid-slide">
         <img src={tlm} alt="" className="slide-image"/>
         <video src={tlm_vid} autoPlay loop muted className="slide-video"/>
