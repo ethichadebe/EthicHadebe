@@ -11,5 +11,5 @@
 - **`npm run lint` fails: 36 errors in 15 files.** 32 `no-unused-vars` (mostly unused `import React`), 2 `react/jsx-key`, 2 `react/prop-types`. Not fixed and the config not loosened — that is its own change. Until it lands, the CI lint step is red on every pull request.
 - **No test script**, so CI runs lint and build only.
 - **The built site is ~52 MB**, almost all two `.mp4` files under `src/assets/shows/`. It deploys, but every deploy re-uploads them.
-- **The package was named `penuel`**, and much of the content (books, shop, shows) is still another person's site. The name is fixed; the content is for the redesign.
+- **The package was named `penuel`.** Renamed to `portfolio`. (Corrected later: the Penuel books, shop and shows were not a leftover from someone else's site — the site was first built to showcase Penuel. The redesign removes that content.)
 - The deploy needs four repository secrets that this session cannot see or set: `VPS_DEPLOY_KEY`, `VPS_HOST`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`. Until they exist, a merge to `main` produces a failed deploy, not a live one.
