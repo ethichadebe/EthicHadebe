@@ -6,10 +6,8 @@ import HomePage from './HomePage.jsx'
 import ReactGA from "react-ga4";
 
 
+// initialize() already records a page view with the real URL.
 ReactGA.initialize("G-XQ85RG5H8X");
-
-// Send pageview with a custom path
-ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
 
 const router = createBrowserRouter([{

@@ -1,7 +1,7 @@
 /* Wrapper styling: Grid layout without margins */
 .grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 1 column on phones, 3 on wide screens */
   gap: 0; /* No spacing between grid items */
 }
 
@@ -143,4 +143,28 @@
 .grid-slide-content .skill-icon {
   width: 25px;
   height: 25px;
+}
+
+/* Two columns (tablets): a lone last card spans the full row, so an odd number
+   of projects never leaves an empty cell. */
+@media (min-width: 600px) and (max-width: 899px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-slide:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Touch screens have no hover, so the description and links would never
+   appear. Show them all the time there, over the still image. */
+@media (hover: none) {
+  .grid-slide-content {
+    transform: none;
+  }
+
+  .grid-slide:hover {
+    transform: none;
+  }
 }

@@ -10,7 +10,7 @@ import mysql from '../../assets/skill_icons/mysql.png'
 
 const About = () => {
   return (
-    <div className='about'>
+    <div id='about' className='about'>
       <div className="about-left">
         <h2>
           Ethic Hadebe: <span className='highlight'>Software developer</span>, <span className='highlight'>tech innovator</span>, and architect of transformative digital solutions. His work reflects a passion for empowering users and businesses through intuitive web and mobile experiences, all designed to solve real-world challenges

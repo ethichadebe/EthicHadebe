@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
 import Chevron_Down from '../../assets/Chevron-Down.svg';
-import { Link } from 'react-scroll';
+import { sectionLink } from '../../scrollToSection';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('Ethic');
@@ -15,12 +15,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className='hero container'>
+    <div id='home' className='hero container'>
       <div className="hero-text">
         <h1 data-text={currentText} className="glitch">{currentText}</h1>
-        <Link to='about' smooth={true} offset={0} duration={500}>
-          <img src={Chevron_Down} alt="Scroll Down" />
-        </Link>
+        <a href='#about' onClick={sectionLink('about')}>
+          <img src={Chevron_Down} alt="Scroll down to About" />
+        </a>
       </div>
     </div>
   );
