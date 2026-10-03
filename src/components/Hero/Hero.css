@@ -2,11 +2,8 @@
 .hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('../../assets/hero_background.gif');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background: var(--color-bg);
+    color: var(--color-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,11 +21,13 @@
   
   /* Glitch Effect for H1 */
   .hero-text h1 {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 8vw; /* Default size, scales with viewport */
+    /* One rule for every screen: 8vw on wide screens, at least 100px, but never
+       more than 20vw, so "HADEBE" (about 4.2em wide) always fits on a phone. */
+    font-size: min(20vw, max(100px, 8vw));
     position: relative;
-    color: white;
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 2px;
     overflow: hidden;
@@ -44,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    color: white;
+    color: var(--color-text);
     background: none;
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
@@ -53,13 +52,13 @@
   
   .hero-text h1.glitch::before {
     left: 2px;
-    text-shadow: -2px 0 #61BC21;
+    text-shadow: -2px 0 var(--color-accent);
     animation: glitch 2s infinite ease-in-out;
   }
   
   .hero-text h1.glitch::after {
     left: -2px;
-    text-shadow: -2px 0 #61BC21;
+    text-shadow: -2px 0 var(--color-accent);
     animation: glitch 2.5s infinite ease-in-out;
   }
   
@@ -97,17 +96,9 @@
     width: 30px; /* Adjust size as needed */
     height: 30px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition);
   }
   
   .hero-text img:hover {
     transform: translateY(10px); /* Adds subtle hover effect */
-  }
-  
-  /* Small screens: large, but never wider than the screen. "HADEBE" is about
-     4.2em wide, so 20vw keeps it inside the hero's side padding. */
-  @media (max-width: 768px) {
-    .hero-text h1 {
-      font-size: min(100px, 20vw);
-    }
   }

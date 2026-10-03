@@ -1,34 +1,30 @@
-.icons{
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: white;
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--color-text);
 }
 
-.icons a{
-    transition: 0.5s;
+.icons a {
+  transition: background-color var(--transition);
 }
 
-.icon{
-    width: 30px;
-    height: 30px;
-    margin: 20px 20px;
-    cursor: pointer;
-    display: block;
+.icons a:hover {
+  background-color: var(--color-accent);
 }
 
-.icons a:hover{
-    color: white;
-    background-color: #61BC21;
+.icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 20px;
 }
 
-/*-------------- Media query --------------*/
-@media (max-width: 650px) {
-    .icon{
-        width: 20px;
-        height: 20px;
-        padding: 10px 10px;
-        margin: 15px;
-    }
+@media (max-width: 600px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 15px;
+  }
 }
