@@ -3,8 +3,14 @@ import { createRoot } from 'react-dom/client'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import './index.css'
 import HomePage from './HomePage.jsx'
-import Book from './components/Book/Book'
-import Konvo from './Konvo'
+import ReactGA from "react-ga4";
+
+
+ReactGA.initialize("G-XQ85RG5H8X");
+
+// Send pageview with a custom path
+ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+
 
 const router = createBrowserRouter([{
   path: "/",
@@ -12,12 +18,6 @@ const router = createBrowserRouter([{
 },{
   path: "/home",
   element:<HomePage/>
-},{
-  path: "/books/:book_name",
-  element:<Book/>
-},{
-  path: "/shows/the_konvo_show",
-  element:<Konvo/>
 }])
 
 createRoot(document.getElementById('root')).render(

@@ -15,6 +15,7 @@
   .navbar-logo {
     display: flex;
     align-items: center;
+    margin: 10px;
   }
   
   .logo {
@@ -33,14 +34,22 @@
   }
   
   .navbar-item {
-    margin: 0 15px;
+    padding: 20px 35px;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .navbar-item:hover {
-    text-decoration: underline;
+    color: #61BC21;
+    transition: 0.5s;
+  }  
+  .mobile-menu-list .navbar-item:hover {
+    color: #61BC21;
+    transition: 0.5s;
   }
   
   /* Mail Icon (Always Visible) */
@@ -123,87 +132,9 @@
     transform: translateY(-8px) rotate(-45deg);
   }
   
-/* Popup Sliding from the Right */
-.popup {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100%;
-    width: 400px;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    z-index: 2000;
-  }
-  
-  .popup.active {
-    right: 0;
-  }
-  
-  .popup-content {
-    padding: 20px;
-  }
-  
-  .popup-content h2 {
-    margin: 0 0 20px 0;
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .popup-content .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .popup-content label {
-    display: block;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-  }
-  
-  .popup-content input,
-  .popup-content textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .popup-content textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .popup-content .submit-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .popup-content .submit-btn:hover {
-    background-color: #555;
-  }
-  
-  .close-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    cursor: pointer;
-    color: #333;
-  }
   /* Responsive Design */
   @media (max-width: 768px) {
-    .desktop-menu {
+    .navbar-menu.desktop-menu {
       display: none;
     }
   
@@ -226,3 +157,19 @@
     }
   }
   
+  /* Active Tab Styling */
+.navbar-item.active {
+  color: #61BC21; /* Highlight active tab */
+  font-weight: bold; /* Optional for emphasis */
+}
+
+/* Inactive Tab Styling */
+.navbar-item {
+  color: white;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar-item:hover {
+  color: #61BC21;
+}

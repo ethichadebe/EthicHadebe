@@ -1,29 +1,23 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './Contact.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faYoutube, faXTwitter, faFacebookF, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Episodes = () => {
   const [social_media] = useState([{
-                                    id: 'youtube',
-                                    icon: faYoutube,
-                                    link:"#"},{
                                     id: 'Instagram',
                                     icon: faInstagram,
-                                    link: "#"},{
+                                    link: "https://www.instagram.com/devethics/"},{
                                     id: 'Facebook',
-                                    icon: faFacebookF,
-                                    link: "#"},{
+                                    icon: faGithub,
+                                    link: "https://github.com/ethichadebe"},{
                                     id: 'Twitter',
-                                    icon: faXTwitter,
-                                    link: "#"},{
-                                    id: 'Tiktok',
-                                    icon: faTiktok,
-                                    link: "#"},{
+                                    icon: faLinkedin,
+                                    link: "https://www.linkedin.com/in/ethic-hadebe-55549014a/"},{
                                     id: 'Envelope',  
                                     icon: faEnvelope,
-                                    link: "#"}])
+                                    link: "mailto:ethichadebe@gmail.com"}])
   return (
     <div className='icons'>
       {social_media.map((social_media) =>(

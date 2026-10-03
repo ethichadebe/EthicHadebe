@@ -1,10 +1,7 @@
-import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
-import Shows from './components/Shows/Shows'
-import Title from './components/Title/Title'
+import Projects from './components/Projects/Projects'
 import About from './components/About/About'
-import Shop from './components/Shop/Shop'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
@@ -16,9 +13,8 @@ const App = () => {
       <div className='container'>
         <About/>
         </div>
-        <Shows/>
+        <Projects/>
         <div className='container'>
-          <Title subTitle="Get in touch" title="Contact"/>
           <Contact/>
           <Footer/>
       </div>

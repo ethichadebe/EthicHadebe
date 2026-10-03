@@ -24,3 +24,17 @@ A static single-page app. Merging to `main` runs `.github/workflows/deploy.yml`,
 
 - Client-side routes (`createBrowserRouter` in `src/main.jsx`) rely on the server's live vhost falling back to `index.html`. That is configured server-side, not here.
 - Asset imports are case-sensitive on CI and the server (Linux), even if they work on Windows or macOS.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues (`ethichadebe/EthicHadebe`), managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default label vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.

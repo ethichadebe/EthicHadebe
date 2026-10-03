@@ -1,34 +1,119 @@
-.hero{
+/* Hero Section Styles */
+.hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../../assets/hero_background.gif');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../../assets/hero_background.gif');
     background-size: cover;
     background-position: center;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.hero-text{
+  }
+  
+  .hero-text {
     text-align: center;
-    max-width: 800px;
-}
-
-.hero-text h1{
+    width: 100%; /* Ensures the container spans full width */
+    height: 50%; /* Occupies 50% of the hero's height */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers text vertically */
+    align-items: center; /* Centers text horizontally */
+  }
+  
+  /* Glitch Effect for H1 */
+  .hero-text h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-style: normal;
-    font-size: 128px;
-}
-
-.hero-text p{
-    max-width: 700px;
-    margin: 10px auto 20px;
-    line-height: 1.4;
-}
-
-.hero-text img{
+    font-size: 8vw; /* Default size, scales with viewport */
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    overflow: hidden;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .hero-text h1.glitch::before,
+  .hero-text h1.glitch::after {
+    content: attr(data-text); /* Uses the text from the data attribute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: none;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch 2s infinite ease-in-out;
+  }
+  
+  .hero-text h1.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #61BC21;
+    animation: glitch 2s infinite ease-in-out;
+  }
+  
+  .hero-text h1.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #61BC21;
+    animation: glitch 2.5s infinite ease-in-out;
+  }
+  
+  /* Glitch Keyframes */
+  @keyframes glitch {
+    0% {
+      clip: rect(0, 900px, 0, 0);
+      transform: translate(0);
+    }
+    10% {
+      clip: rect(10px, 900px, 90px, 0);
+      transform: translate(-5px, -5px);
+    }
+    20% {
+      clip: rect(85px, 900px, 140px, 0);
+      transform: translate(5px, 5px);
+    }
+    30% {
+      clip: rect(140px, 900px, 190px, 0);
+      transform: translate(-5px, -5px);
+    }
+    40% {
+      clip: rect(0, 900px, 0, 0);
+      transform: translate(0);
+    }
+    100% {
+      clip: rect(0, 900px, 0, 0);
+      transform: translate(0);
+    }
+  }
+  
+  /* Chevron Icon */
+  .hero-text img {
     margin-top: 20px;
-}
-
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .hero-text img:hover {
+    transform: translateY(10px); /* Adds subtle hover effect */
+  }
+  
+  /* Media Query for Small Screens */
+  @media (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 100px; /* Fixed large size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 90px; /* Fixed size for extra-small screens */
+    }
+  }
+  

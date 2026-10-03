@@ -1,0 +1,3 @@
+# Use Framer Motion, not GSAP, for the revamp's animation
+
+The revamp's reference sites (daofor.design, nivora.framer.website) use scroll-driven storytelling effects of the kind GSAP + ScrollTrigger is commonly reached for. We decided to start with Framer Motion instead, since it's already an installed-but-unused dependency and its scroll hooks (`useScroll`, `useTransform`, `whileInView`) likely cover entrance animations, parallax, and hover/tap states without adding a new dependency. GSAP is only added later if a specific effect (e.g. a pinned, scroll-scrubbed sequence) genuinely needs more control than Framer Motion's scroll hooks give.
