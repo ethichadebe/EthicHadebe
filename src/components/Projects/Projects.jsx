@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import './Projects.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
@@ -9,8 +8,6 @@ import bdme from "../../assets/projects/bdme.png"
 import bdme_vid from "../../assets/projects/bdme.mp4"
 import eph from "../../assets/projects/eph.png"
 import eph_vid from "../../assets/projects/eph.mp4"
-import penuel from "../../assets/projects/penuel.png"
-import penuel_vid from "../../assets/projects/penuel.mp4"
 import { Link } from 'react-router-dom'
 
 const Projects = () => {

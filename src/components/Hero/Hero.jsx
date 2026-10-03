@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Hero.css';
 import Chevron_Down from '../../assets/Chevron-Down.svg';
 import { Link } from 'react-scroll';

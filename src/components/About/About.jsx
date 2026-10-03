@@ -1,4 +1,3 @@
-import React from 'react'
 import './About.css'
 import about_img from '../../assets/about.webp'
 import react from '../../assets/skill_icons/react.png'
@@ -8,7 +7,6 @@ import java from '../../assets/skill_icons/java.png'
 import kotlin from '../../assets/skill_icons/Kotlin_Icon.png'
 import androidStudio from '../../assets/skill_icons/android-studio-icon.webp'
 import mysql from '../../assets/skill_icons/mysql.png'
-import { Link } from 'react-router-dom'
 
 const About = () => {
   return (

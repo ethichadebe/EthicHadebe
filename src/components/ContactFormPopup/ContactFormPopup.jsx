@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./ContactFormPopup.css";
+import PropTypes from "prop-types";
 import emailjs from "emailjs-com";
 
 const ContactFormPopup = ({ isOpen, togglePopup }) => {
@@ -71,6 +72,11 @@ const ContactFormPopup = ({ isOpen, togglePopup }) => {
       </div>
     </div>
   );
+};
+
+ContactFormPopup.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  togglePopup: PropTypes.func.isRequired,
 };
 
 export default ContactFormPopup;
