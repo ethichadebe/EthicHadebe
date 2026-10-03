@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    uses: ethichadebe/workflows/.github/workflows/static-deploy.yml@main
+    with:
+      app: portfolio
+      install: npm ci
+      build: npm run build
+      dist: dist
+    secrets: inherit
