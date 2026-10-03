@@ -104,16 +104,10 @@
     transform: translateY(10px); /* Adds subtle hover effect */
   }
   
-  /* Media Query for Small Screens */
+  /* Small screens: large, but never wider than the screen. "HADEBE" is about
+     4.2em wide, so 20vw keeps it inside the hero's side padding. */
   @media (max-width: 768px) {
     .hero-text h1 {
-      font-size: 100px; /* Fixed large size for smaller screens */
+      font-size: min(100px, 20vw);
     }
   }
-  
-  @media (max-width: 480px) {
-    .hero-text h1 {
-      font-size: 90px; /* Fixed size for extra-small screens */
-    }
-  }
-  

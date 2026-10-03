@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 const Projects = () => {
   
   return (
-    <div className="grid-wrapper">
+    <div id="projects" className="grid-wrapper">
       <div className="grid-slide">
         <img src={tlm} alt="Default Background" className="slide-image"/>
         <video src={tlm_vid} autoPlay loop muted className="slide-video"/>

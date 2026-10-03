@@ -1,18 +1,41 @@
-/* Popup Sliding from the Right */
+/* Popup sliding in from the right.
+   Closed, it is moved its own full width off-screen (translateX(100%)), so no
+   part of it shows at any screen size, and it is hidden from focus and screen
+   readers. Its width never exceeds the screen. */
 .popup {
     position: fixed;
     top: 0;
-    right: -100%;
-    height: 100%;
-    width: 400px;
+    right: 0;
+    bottom: 0;
+    width: min(400px, 100%);
+    overflow-y: auto;
     background: #000000;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
     z-index: 2000;
   }
   
   .popup.active {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease-in-out, visibility 0s;
+  }
+
+  .popup-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1999;
+  }
+
+  .popup-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
   }
   
   .popup-content {

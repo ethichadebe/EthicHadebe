@@ -2,8 +2,14 @@ import { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/Logo.png";
 import mail from "../../assets/Mail.png";
-import { Link } from "react-scroll";
+import { sectionLink } from "../../scrollToSection";
 import ContactFormPopup from "../ContactFormPopup/ContactFormPopup";
+
+const SECTIONS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // Toggle for burger menu
@@ -17,73 +23,52 @@ const Navbar = () => {
     setPopupOpen(!popupOpen);
   };
 
+  const closeMenu = () => setMenuOpen(false);
+
+  const menuItems = SECTIONS.map(({ id, label }) => (
+    <li key={id}>
+      <a href={`#${id}`} className="navbar-item" onClick={sectionLink(id, closeMenu)}>
+        {label}
+      </a>
+    </li>
+  ));
+
   return (
     <>
       <nav className="navbar">
         {/* Logo */}
         <div className="navbar-logo">
-          <Link to="about" smooth={true} offset={-1000} duration={500}>
-            <img
-              src={logo}
-              alt="Logo"
-              className="logo"
-              onClick={() => setMenuOpen(false)}
-            />
-          </Link>
+          <a href="#home" onClick={sectionLink("home", closeMenu)}>
+            <img src={logo} alt="Ethic Hadebe, back to top" className="logo" />
+          </a>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="navbar-menu desktop-menu">
-          <Link to="about" smooth={true} offset={-1000} duration={500}>
-            <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-              Home
-            </li>
-          </Link>
-          <Link to="about" smooth={true} offset={0} duration={500}>
-            <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-              About
-            </li>
-          </Link>
-          <Link to="about" smooth={true} offset={700} duration={500}>
-            <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-              Projects
-            </li>
-          </Link>
-        </ul>
+        <ul className="navbar-menu desktop-menu">{menuItems}</ul>
 
         {/* Mobile Menu Options */}
         <div className="mobile-options">
-          <div className="burger-menu" onClick={toggleMenu}>
-            <div className={`line ${menuOpen ? "open" : ""}`}></div>
-            <div className={`line ${menuOpen ? "open" : ""}`}></div>
-            <div className={`line ${menuOpen ? "open" : ""}`}></div>
-          </div>
+          <button
+            type="button"
+            className="burger-menu"
+            onClick={toggleMenu}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            <span className={`line ${menuOpen ? "open" : ""}`}></span>
+            <span className={`line ${menuOpen ? "open" : ""}`}></span>
+            <span className={`line ${menuOpen ? "open" : ""}`}></span>
+          </button>
         </div>
 
         {/* Mail Icon (Always Visible) */}
-        <div className="navbar-mail" onClick={togglePopup}>
-          <img src={mail} alt="Mail" className="mail-icon" />
-        </div>
+        <button type="button" className="navbar-mail" onClick={togglePopup} aria-label="Get in touch">
+          <img src={mail} alt="" className="mail-icon" />
+        </button>
 
         {/* Mobile Dropdown Menu */}
         <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
-          <ul className="mobile-menu-list">
-            <Link to="about" smooth={true} offset={-1000} duration={500}>
-              <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-                Home
-              </li>
-            </Link>
-            <Link to="about" smooth={true} offset={-100} duration={500}>
-              <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-                About
-              </li>
-            </Link>
-            <Link to="about" smooth={true} offset={1200} duration={500}>
-              <li className="navbar-item" onClick={() => setMenuOpen(false)}>
-                Projects
-              </li>
-            </Link>
-          </ul>
+          <ul className="mobile-menu-list">{menuItems}</ul>
         </div>
       </nav>
 
