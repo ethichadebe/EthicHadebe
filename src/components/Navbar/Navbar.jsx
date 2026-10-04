@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/Logo.png";
-import mail from "../../assets/Mail.png";
+import { LogoIcon, MailIcon } from "./NavIcons";
 import { sectionLink } from "../../scrollToSection";
 import ContactFormPopup from "../ContactFormPopup/ContactFormPopup";
 
@@ -38,8 +37,8 @@ const Navbar = () => {
       <nav className="navbar">
         {/* Logo */}
         <div className="navbar-logo">
-          <a href="#home" onClick={sectionLink("home", closeMenu)}>
-            <img src={logo} alt="Ethic Hadebe, back to top" className="logo" />
+          <a href="#home" onClick={sectionLink("home", closeMenu)} aria-label="Ethic Hadebe, back to top">
+            <LogoIcon className="nav-icon" />
           </a>
         </div>
 
@@ -63,7 +62,7 @@ const Navbar = () => {
 
         {/* Mail Icon (Always Visible) */}
         <button type="button" className="navbar-mail" onClick={togglePopup} aria-label="Get in touch">
-          <img src={mail} alt="" className="mail-icon" />
+          <MailIcon className="nav-icon" />
         </button>
 
         {/* Mobile Dropdown Menu */}
