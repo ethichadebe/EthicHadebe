@@ -10,6 +10,8 @@ import eph from "../../assets/projects/eph.png"
 import eph_vid from "../../assets/projects/eph.mp4"
 import accucery from "../../assets/projects/accucery.png"
 import accucery_vid from "../../assets/projects/accucery.mp4"
+import askus from "../../assets/projects/askus.png"
+import askus_vid from "../../assets/projects/askus.mp4"
 
 const Projects = () => {
   
@@ -29,6 +31,21 @@ const Projects = () => {
 
             <a href="https://github.com/ethichadebe/Brittle-AI" target="_blank" rel="noreferrer" className="skill skill-git" aria-label="Source on GitHub">
               <FontAwesomeIcon icon={faGithub} className='skill-icon'/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid-slide">
+        <img src={askus} alt="" className="slide-image"/>
+        <video src={askus_vid} autoPlay loop muted playsInline className="slide-video"/>
+        <div className="grid-slide-content">
+          <h3>Ask Us</h3>
+          <p>A platform for a South African market research agency: respondents find paid studies and apply, while the team runs projects, screening and payouts. Built with React and Spring Boot.</p>
+
+          <div className="skills-container">
+            <a href="https://askusapp.ethichadebe.me/" target="_blank" rel="noreferrer" className="skill">
+              <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
             </a>
           </div>
         </div>

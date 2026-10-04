@@ -1,12 +1,14 @@
-/* Wrapper styling: Grid layout without margins */
+/* Cards wrap in rows that always fill the width: three per row on laptops and
+   wider (two on tablets, one on phones), and the cards on a shorter last row
+   grow to share it. So 5 projects are 3 + 2, never a row with empty cells. */
 .grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 1 column on phones, 3 on wide screens */
-  gap: 0; /* No spacing between grid items */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Slide styling */
 .grid-slide {
+  flex: 1 1 30%;
   position: relative;
   height: 600px; /* Fixed height for slides */
   overflow: hidden;
@@ -100,15 +102,9 @@
   border-radius: 50%;
 }
 
-/* Two columns (tablets): a lone last card spans the full row, so an odd number
-   of projects never leaves an empty cell. */
-@media (min-width: 600px) and (max-width: 900px) {
-  .grid-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid-slide:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
+@media (max-width: 900px) {
+  .grid-slide {
+    flex-basis: 300px;
   }
 }
 
