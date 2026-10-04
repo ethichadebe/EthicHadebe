@@ -25,8 +25,11 @@
     --radius: 10px;
     --transition: 0.3s ease;
 
-    /* Height of the fixed navbar: the 75px mail icon plus its 10px margins. */
-    --nav-height: 95px;
+    /* Navbar: the logo and mail badge share one size and margin. Its height
+       is the icon plus the margin above and below. */
+    --nav-icon-size: 56px;
+    --nav-icon-margin: 10px;
+    --nav-height: calc(var(--nav-icon-size) + 2 * var(--nav-icon-margin));
 }
 
 *{
