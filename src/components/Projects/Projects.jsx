@@ -12,6 +12,8 @@ import accucery from "../../assets/projects/accucery.png"
 import accucery_vid from "../../assets/projects/accucery.mp4"
 import askus from "../../assets/projects/askus.png"
 import askus_vid from "../../assets/projects/askus.mp4"
+import atapp from "../../assets/projects/atapp.png"
+import atapp_vid from "../../assets/projects/atapp.mp4"
 
 const Projects = () => {
   
@@ -80,6 +82,25 @@ const Projects = () => {
           <div className="skills-container">
             <a href="https://play.google.com/store/apps/details?id=com.eph.ephotspot&hl=en" target="_blank" rel="noreferrer" className="skill">
               <FontAwesomeIcon icon={faLink} className='skill-icon'/> Go to PlayStore
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid-slide">
+        <img src={atapp} alt="" className="slide-image"/>
+        <video src={atapp_vid} autoPlay loop muted playsInline className="slide-video"/>
+        <div className="grid-slide-content">
+          <h3>Atapp</h3>
+          <p>One artwork from the National Gallery of Art, every day. First an Android app in Java, now also on the web with React, Fastify and Postgres, so iPhone users can swipe through today&apos;s ten too.</p>
+
+          <div className="skills-container">
+            <a href="https://atapp.ethichadebe.me/" target="_blank" rel="noreferrer" className="skill">
+              <FontAwesomeIcon icon={faLink} className='skill-icon'/> Visit website
+            </a>
+
+            <a href="https://github.com/ethichadebe/Atapp-Android" target="_blank" rel="noreferrer" className="skill skill-git" aria-label="Source on GitHub">
+              <FontAwesomeIcon icon={faGithub} className='skill-icon'/>
             </a>
           </div>
         </div>
